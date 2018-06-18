@@ -1,0 +1,28 @@
+<ng-include src="'/templates/shared/header.html'"></ng-include>
+<button class="btn btn-primary" ng-click="$ctrl.newProject()">Create New Project</button>
+<table class="table table-hover" align="right">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Project Name</th>
+			<th>Project Status</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody ng-if="$ctrl.projects.length != 0">
+		<tr ng-repeat="project in $ctrl.projects">
+			<td>{{project.id}}</td>
+			<td>{{project.name}}</td>
+			<td>{{project.status}}</td>
+			<td>
+				<button ng-click="$ctrl.deleteProject(project)">Delete</button>
+				<button ng-if="project.status == 'opened'" ng-click="$ctrl.updateProject(project)">Mark As Completed</button>
+			</td>
+		</tr>
+	</tbody>
+	<tbody ng-if="$ctrl.projects.length == 0">
+		<tr>
+			<td colspan="4" align="center"> No Projects </th>
+		</tr>
+	</tbody>
+</table>

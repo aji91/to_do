@@ -1,0 +1,21 @@
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: to_do_dev
+  username: root
+  password: root
+
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  adapter: 'postgresql'
+  encoding: unicode
+  database: to_do_live
+  username: chivalryuser
+  password: by6dUeQg6HKR

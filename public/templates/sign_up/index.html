@@ -1,0 +1,30 @@
+<ng-include src="'/templates/shared/header.html'"></ng-include>
+<form ng-submit="$ctrl.registerUser()">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <div>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" ng-model="$ctrl.user.name" name="name" required>
+    </div>
+
+    <div>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" ng-model="$ctrl.user.email" name="email" required>
+    </div>
+
+    <div>
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" ng-model="$ctrl.user.password" name="password" required>
+    </div>
+    <div>
+      <label for="password_confirmation"><b>Confirm Password</b></label>
+      <input type="password" placeholder="Confirm Password" name="password_confirmation" ng-model="$ctrl.user.password_confirmation" required>
+    </div>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
